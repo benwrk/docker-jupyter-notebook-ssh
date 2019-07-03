@@ -11,7 +11,7 @@ RUN conda install jupyter -y --quiet
 RUN mkdir /opt/notebooks
 ENV ROOT_PASSWORD=1q2w3e4r
 ENV NOTEBOOK_TOKEN=1q2w3e4r
-CMD bash -c 'echo -e "$ROOT_PASSWORD\n$ROOT_PASSWORD"' | passwd && service ssh start && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='$NOTEBOOK_TOKEN'
+CMD bash -c 'echo -e "$ROOT_PASSWORD\n$ROOT_PASSWORD"' | passwd && service ssh start && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='"$NOTEBOOK_TOKEN"'
 EXPOSE 22 8888
 
 # Suggested run command
