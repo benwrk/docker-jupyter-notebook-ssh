@@ -15,4 +15,4 @@ CMD bash -c 'echo -e "$ROOT_PASSWORD\n$ROOT_PASSWORD"' | passwd && service ssh s
 EXPOSE 22 8888
 
 # Suggested run command
-# docker run -e ROOT_PASSWORD=<password> -e NOTEBOOK_TOKEN=<token> -p <notebook-port>:8888 -p <ssh-port>:22 -d benwrk/jupyter-notebook-ssh
+# docker run -e ROOT_PASSWORD=<password> -e NOTEBOOK_TOKEN=<token> -p <notebook-port>:8888 -p <ssh-port>:22 -d benwrk/jupyter-notebook-ssh --name <container-name>
